@@ -3,3 +3,12 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.TodoList h2 {
+  text-align: center;
+}
+
+.TodoList_p {
+  font-size: 24px;
+  margin: 10px 0 10px 147px;
+}

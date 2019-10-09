@@ -1,5 +1,11 @@
 .TodoItem_checkbox {
-  width: 400px;
+  width: 600px;
+  max-width: 600px;
   font-size: 24px !important;
   margin: 10px 0 10px 100px;
+}
+
+.TodoItem_span {
+  margin-left: 147px;
+  color: grey;
 }

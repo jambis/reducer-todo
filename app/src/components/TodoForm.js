@@ -7,7 +7,7 @@ const TodoForm = ({ dispatch }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch({ type: "ADD_TODO", payload: value });
+    value !== "" && dispatch({ type: "ADD_TODO", payload: value });
     setValue("");
   };
 
@@ -25,11 +25,11 @@ const TodoForm = ({ dispatch }) => {
           onChange={e => setValue(e.target.value)}
         />
         <div className="TodoForm_buttons">
-          <Button primary type="submit">
-            Add
-          </Button>
           <Button negative type="button" onClick={handleClear}>
             Clear Completed
+          </Button>
+          <Button primary type="submit">
+            Add
           </Button>
         </div>
       </form>

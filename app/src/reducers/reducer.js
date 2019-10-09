@@ -1,8 +1,11 @@
+import * as moment from "moment";
 export const initialState = [
   {
     item: "Learn about reducers",
     completed: false,
-    id: 3892987589
+    id: Date.now,
+    startDate: moment().format("dddd, MMMM Do YYYY, h:mm a"),
+    completeDate: null
   }
 ];
 
@@ -12,7 +15,9 @@ export const reducer = (state, action) => {
       const newTodo = {
         item: action.payload,
         completed: false,
-        id: Date.now()
+        id: Date.now(),
+        startDate: moment().format("dddd, MMMM Do YYYY, h:mm a"),
+        completeDate: null
       };
 
       return [...state, newTodo];
@@ -25,7 +30,16 @@ export const reducer = (state, action) => {
         }
       });
     case "CLEAR_COMPLETED":
-      return state.filter(item => item.completed === false);
+      return state.map(item => {
+        if (item.completed) {
+          return {
+            ...item,
+            completeDate: moment().format("dddd, MMMM Do YYYY, h:mm a")
+          };
+        } else {
+          return item;
+        }
+      });
     default:
       return state;
   }
