@@ -1,0 +1,13 @@
+.TodoForm {
+  margin: 0 auto;
+}
+
+.TodoForm_input {
+  width: 600px;
+}
+
+.TodoForm_buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0px 20px 0;
+}
